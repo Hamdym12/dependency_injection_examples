@@ -1,11 +1,10 @@
 import 'dart:async';
-
 import 'package:injectable/injectable.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 
-@Singleton()
-class InternetChecker{
+
+ class InternetChecker{
   Future<bool> checkInternet()async{
     final bool isConnected = await InternetConnectionChecker.instance.hasConnection;
     if (isConnected) {
@@ -16,6 +15,7 @@ class InternetChecker{
       return false;
     }
   }
+
   slowerInternetChecker()async{
     final customChecker = InternetConnectionChecker.createInstance(
       slowConnectionConfig: SlowConnectionConfig(
@@ -29,7 +29,6 @@ class InternetChecker{
   }
 }
 
-@Singleton()
 class InternetCheckerStream{
   Future<StreamSubscription<InternetConnectionStatus>> checkInternetStream()async{
     final connectionChecker = InternetConnectionChecker.instance;
