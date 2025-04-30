@@ -1,8 +1,8 @@
-import 'package:dependency_injection/with_di/di_with_service_locater.dart';
+import 'package:dependency_injection/di/di.config.dart';
 import 'package:get_it/get_it.dart';
+import 'package:injectable/injectable.dart';
 
-GetIt sl = GetIt.instance;
+final getIt = GetIt.instance;
 
-void setupServiceLocate(){
-  sl.registerLazySingleton(()=>CounterClass());
-}
+@InjectableInit()
+void configureDependencies(String environment) => getIt.init(environment: environment);
