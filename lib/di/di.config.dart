@@ -9,8 +9,8 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:dependency_injection/connection_checker/connection_checker_cubit.dart'
-    as _i306;
+import 'package:dependency_injection/connection_checker/connection_checker_service.dart'
+    as _i416;
 import 'package:dependency_injection/di_with_injectable/di_with_injectable.dart'
     as _i509;
 import 'package:dependency_injection/with_di/di_with_service_locater.dart'
@@ -25,11 +25,11 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
-    gh.singleton<_i306.InternetChecker>(() => _i306.InternetChecker());
-    gh.singleton<_i306.InternetCheckerStream>(
-      () => _i306.InternetCheckerStream(),
-    );
     gh.singleton<_i509.GetData>(() => _i509.GetData());
+    gh.singleton<_i416.InternetChecker>(() => _i416.InternetChecker());
+    gh.singleton<_i416.InternetCheckerStream>(
+      () => _i416.InternetCheckerStream(),
+    );
     gh.lazySingleton<_i501.CounterClass>(() => _i501.CounterClass());
     return this;
   }

@@ -6,7 +6,7 @@ import 'package:dependency_injection/with_di/di_with_service_locater.dart';
 import 'package:flutter/material.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
-import 'connection_checker/connection_checker_cubit.dart';
+import 'connection_checker/connection_checker_service.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
